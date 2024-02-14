@@ -1,0 +1,39 @@
+.fs{
+    font-size: 0.5rem;
+}
+
+.hs{
+    font-size: 0.8rem;
+}
+
+.card-img-top{
+  height: 18rem;
+}
+
+.btn-dark:hover {
+    background-color: white !important;
+    border-color: black !important;
+}
+
+#indicators > button:not(.active){
+    background: url('../../../assets/images/dot.svg') no-repeat;
+    border: none;
+    background-size: contain;
+}
+
+  #indicators > button.active {
+    background: url('../../../assets/images/min.svg') no-repeat;
+    border: none;
+    background-size: contain;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 576px) {
+  
+    .card-img-top{
+      height: 14rem;
+    }
+  }
+
+
+
