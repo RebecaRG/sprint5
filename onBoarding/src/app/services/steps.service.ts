@@ -6,7 +6,7 @@ import { IStep } from '../interfaces/i-step';
 })
 export class StepsService {
   public steps : IStep[] = [{
-    title: 'Dedica moltes hores',
+    title: 'Dedica moltes hores:',
     descripcion: 'Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament.',
     img: '../../../assets/images/time_managment.svg',
     bgcolor: '#4DA2A9',
@@ -30,8 +30,4 @@ export class StepsService {
     return this.steps;
   }
 
-
-
-
-  // constructor() { }
 }

@@ -1,6 +1,7 @@
 <div class="d-flex align-items-center vh-100">
-  <div
-    class="card rounded-5 col-6 col-md-5 col-lg-4 col-xl-3 col-xl-2 my-auto mx-auto shadow border-0 overflow-hidden">
+
+  <div [@animSlider]="currentStep"
+    class="card rounded-5 col-6 col-md-4 col-xl-3 my-auto mx-auto shadow border-0 overflow-hidden">
 
     <div class="card-img-top" [style.backgroundColor]="steps[currentStep].bgcolor">
       <img [src]="steps[currentStep].img" class=" h-100 w-100 py-4 py-md-5 px-2 px-md-4 overflow-hidden">
@@ -9,32 +10,26 @@
       <h6 class="card-title strong hs">{{steps[currentStep].title}}</h6>
       <p class="card-text small fs">{{steps[currentStep].descripcion}}</p>
 
-
       <div class="d-flex mb-1 mb-md-4 align-items-center">
         <div id="indicators" class="col-3 d-flex justify-content-between ">
-          <button (click)="cS(0)" type="button" id="0" class="active"></button>
-          <button (click)="cS(1)" type="button" id="1"></button>
-          <button (click)="cS(2)" type="button" id="2"></button>
-        </div>
-        <div class="py-3 ms-auto me-3">
-
-          @if(currentStep === 0){
-          <button (click)="next()" class="btn btn-dark rounded-circle"><img
-              src="../../../assets/images/arrow_r.svg"></button>
-
-          }
-          @if(currentStep === 1){
-          <button (click)="previous()" class="btn btn-outline-dark rounded-circle me-2"><img
-              src="../../../assets/images/arrow_l.svg"></button>
-          <button (click)="next()" class="btn btn-dark rounded-circle"><img
-              src="../../../assets/images/arrow_r.svg"></button>
-
-          }
-          @if(currentStep === 2){
-          <button (click)="previous()" class="btn btn-outline-dark rounded-circle"><img
-              src="../../../assets/images/arrow_l.svg"></button>
+          @for (step of steps; track $index) {
+          <button (click)="cS($index)" type="button" [id]="$index"
+            [class]="{'active': currentStep === $index}"></button>
           }
         </div>
+
+        <div class="py-3 ms-auto">
+          @if(currentStep > 0 && currentStep <= steps.length-1){ <button (click)="previous()" type="button"
+            class="btn btn-outline-dark rounded-circle me-2"><img src="../../../assets/images/arrow_l.svg"></button>
+            }
+
+            @if(currentStep >= 0 && currentStep < steps.length-1){ <button (click)="next()" type="button"
+              class="btn btn-dark rounded-circle"><img src="../../../assets/images/arrow_r.svg"></button>
+              }
+
+        </div>
+
       </div>
     </div>
   </div>
+</div>

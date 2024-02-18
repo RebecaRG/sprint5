@@ -1,9 +1,9 @@
 .fs{
-    font-size: 0.5rem;
+    font-size: 0.75rem;
 }
 
 .hs{
-    font-size: 0.8rem;
+    font-size: 1.05rem;
 }
 
 .card-img-top{
@@ -13,6 +13,9 @@
 .btn-dark:hover {
     background-color: white !important;
     border-color: black !important;
+}
+.slider-image {
+  flex: 0 0 auto; 
 }
 
 #indicators > button:not(.active){
@@ -29,11 +32,19 @@
   }
 
   @media (max-width: 576px) {
-  
     .card-img-top{
       height: 14rem;
     }
   }
 
+  @media (max-width: 1200px) { 
+    .fs{
+      font-size: 0.5rem;
+  }
+  
+  .hs{
+      font-size: 0.8rem;
+  }
+  }
 
 

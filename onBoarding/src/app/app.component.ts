@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-// import{ StepsService } from './services/steps.service'
 
 @Component({
   selector: 'app-root',
@@ -12,5 +11,4 @@ import { HomeComponent } from './components/home/home.component';
 })
 export class AppComponent {
   title = 'onBoarding';
-  // constructor( public stepsService: StepsService ) {}
 }
